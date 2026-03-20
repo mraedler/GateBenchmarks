@@ -114,6 +114,7 @@ def compare_branch_mhd(f1, f2, tol):
 
 def analyse_one_folder(folder, previous_folder):
     # read first phsp
+    print(f'Look into {folder}')
     tree1 = uproot.open(f'{folder}/detector_vpg_Carbon.root')['PhaseSpace']
     #tree1 = tree1.arrays(library="numpy")
     tree1 = tree1.arrays(["AtomicNumber", "X", "Ekine", "Time", "IonTime"], library="np")
@@ -122,7 +123,8 @@ def analyse_one_folder(folder, previous_folder):
 
     # read second phsp
     tree2 = uproot.open(f'{previous_folder}/detector_vpg_Carbon.root')['PhaseSpace']
-    tree2 = tree2.arrays(library="numpy")
+    #tree2 = tree2.arrays(library="numpy")
+    tree2 = tree2.arrays(["AtomicNumber", "X", "Ekine", "Time", "IonTime"], library="np")
     n2 = len(tree2['X'])
     print(f'Second (read) phsp {n2} {tree2.keys()}')
 

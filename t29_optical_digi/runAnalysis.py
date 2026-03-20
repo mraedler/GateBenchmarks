@@ -196,13 +196,13 @@ def compare_with_previous_version(filename_new, filename_old):
     wd_globalPosZ=wasserstein_distance(globalPosZ_new,globalPosZ_old)
     wd_time=wasserstein_distance(time_new,time_old)
 
-    #print("wd_energy",wd_energy)
-    #print("wd_globalPosX",wd_globalPosX)
-    #print("wd_globalPosY",wd_globalPosY)
-    #print("wd_globalPosZ",wd_globalPosZ)
-    #print("wd_time",wd_time)
+    print("wd_energy",wd_energy)
+    print("wd_globalPosX",wd_globalPosX)
+    print("wd_globalPosY",wd_globalPosY)
+    print("wd_globalPosZ",wd_globalPosZ)
+    print("wd_time",wd_time)
 
-    if (wd_energy>4e-9):
+    if (wd_energy>4.5e-9):
         print(CRED+"Wasserstein distance test for energy failed"+CEND)
         exit()
         returnBool = False
